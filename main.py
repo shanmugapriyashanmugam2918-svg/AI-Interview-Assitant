@@ -43,7 +43,17 @@ for index, topic in enumerate(assistant.topics,start=1):
     print(f"{index}. {topic.name}")
                             
 #  get user input for topic selection
-choice= int(input("Choose a topic: "))
+while True:
+    try:
+        choice= int(input("Choose a topic: "))
+        if choice < 1 or choice > len(assistant.topics):
+            print("Invalid choice. Please select a valid topic number.")
+        else:
+            break
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+    
+
 selected_topic=assistant.topics[choice-1]
 
 for question in selected_topic.questions:
