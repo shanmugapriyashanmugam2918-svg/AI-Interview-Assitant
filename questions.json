@@ -1,0 +1,40 @@
+{
+    "Python": [
+        {
+            "question": "what is the difference between a list and a tuple?",
+            "difficulty": "easy"
+        },
+        {
+            "question": "what are Python decorators, and when would you use one?",
+            "difficulty": "medium"
+        },
+        {
+            "question": "Explain the difference between == and is.",
+            "difficulty": "hard"
+        }
+    ],
+    "JavaScript": [
+        {
+            "question": "What is the difference between var, let, and const?",
+            "difficulty": "easy"
+        },
+        {
+            "question": "Explain the concept of closures in JavaScript.",
+            "difficulty": "medium"
+        },
+        {
+            "question": "What is the event loop, and how does it work?",
+            "difficulty": "hard"
+        }
+    ],
+    "System Design": [
+        {
+            "question": "What is the difference between a process and a thread?",
+            "difficulty": "easy"
+        },
+        {
+            "question": "Explain the concept of load balancing in system design.",
+            "difficulty": "medium"
+        }
+    ]
+}
