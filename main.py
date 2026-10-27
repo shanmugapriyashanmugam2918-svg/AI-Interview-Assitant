@@ -1,20 +1,34 @@
 import json
 class Questions:
-    def __init__(self,text,difficulty):
-        self.text=text
-        self.difficulty=difficulty
+    def __init__(self,text:str,difficulty:str):
+        self.text:str=text
+        self.difficulty:str=difficulty
     def Display(self):
         print(f"Questions : {self.text}")
         print(f"Difficulty : {self.difficulty}")
+        print(f"Language : {getattr(self,'language', 'N/A')}")
 
+class TheoryQues(Questions):
+    pass
+
+class CodingQues(Questions):
+     def __init__(self,text:str,difficulty:str,language:str):
+           super().__init__(text,difficulty)
+           self.language:str=language
+     def Display(self):
+         super().Display()
+         print(f"Language : {self.language}")
 class Topic:
-    def __init__(self,name):
-        self.name=name
-        self.questions=[]
+    def __init__(self,name:str):
+        self.name:str=name
+        self.questions:list[Questions]=[]
 
 class InterviewAssistant:
-    def __init__ (self,topics):
-        self.topics=topics
+    def __init__ (self,topics:list[Topic]):
+        self.topics:list[Topic]=topics
+
+q1=CodingQues("What is Python?","Easy","Python")
+q1.Display()
 
 def load_questions():
     try:
