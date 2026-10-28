@@ -1,4 +1,5 @@
 import json
+import asyncio
 class Questions:
     def __init__(self,text:str,difficulty:str):
         self.text:str=text
@@ -40,6 +41,18 @@ def load_questions():
     return data
 
 data = load_questions()
+
+# Async and await implementation
+async def fetchQuestion(question):
+    print("\nloading questions...")
+    await asyncio.sleep(2)
+    return question
+
+async def getStarted(selected_topic):
+    for question in selected_topic.questions:
+        loaded_Ques = await fetchQuestion(question)
+        loaded_Ques.Display()
+        input("Press Enter to continue to the next question...")
 # print(f"data: {data}")
 
 topics = []   
@@ -70,6 +83,4 @@ while True:
 
 selected_topic=assistant.topics[choice-1]
 
-for question in selected_topic.questions:
-    question.Display()
-    input("Press Enter to continue to the next question...")
+asyncio.run(getStarted(selected_topic))
